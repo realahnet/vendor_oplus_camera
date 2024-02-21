@@ -7,3 +7,6 @@
 on boot
     # OIS
     chown cameraserver cameraserver /sys/kernel/ois_control/dump_registers
+
+on property:vendor.usb.product_string=*
+    setprop ro.vendor.oplus.market.watermark ${vendor.usb.product_string}
