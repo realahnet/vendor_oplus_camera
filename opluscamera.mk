@@ -32,5 +32,8 @@ TARGET_USES_OPLUS_CAMERA := true
 # Video
 TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
 
+# SEpolicy
+include vendor/oplus/camera/sepolicy/SEPolicy.mk
+
 # Inherit from camera-vendor.mk
 $(call inherit-product, vendor/oplus/camera/camera-vendor.mk)
