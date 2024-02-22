@@ -1,0 +1,9 @@
+#
+# Copyright (C) 2024 The Nameless-AOSP Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on boot
+    # OIS
+    chown cameraserver cameraserver /sys/kernel/ois_control/dump_registers
