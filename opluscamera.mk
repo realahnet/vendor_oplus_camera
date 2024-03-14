@@ -1,3 +1,7 @@
+# Blob dependencies
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common-V3-ndk.vendor
+
 # Framework
 PRODUCT_PACKAGES += \
     oplus-fwk
