@@ -23,7 +23,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.lens.oem_image_package=com.oneplus.gallery
 
 # Photo
-TARGET_USES_OPLUS_CAMERA := true
+TARGET_CAMERA_PACKAGE_NAME := com.oplus.camera
 
 # Video
 TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true

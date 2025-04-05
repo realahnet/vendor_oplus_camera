@@ -35,7 +35,7 @@ PRODUCT_PACKAGES += \
     libcolorx-loader \
     libcolorx \
     libcoolex \
-    libextendfile \
+    libextendfile_system_ext \
     libjni_wideselfie \
     libjnisingleblur_api \
     libjnistblur_api \
