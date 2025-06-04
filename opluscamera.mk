@@ -23,10 +23,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.lens.oem_image_package=com.oneplus.gallery
 
 # Photo
-TARGET_CAMERA_PACKAGE_NAME := com.oplus.camera
+$(call soong_config_set,camera,package_name,com.oplus.packageName)
 
 # Video
-TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
+$(call soong_config_set,camera,override_format_from_reserved,true)
 
 # SEpolicy
 include vendor/oplus/camera/sepolicy/SEPolicy.mk
