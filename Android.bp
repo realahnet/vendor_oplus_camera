@@ -186,7 +186,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/system_ext/lib64/libAvatarEngineRender.so"],
-			shared_libs: ["liblog", "libdl", "libandroid", "libz", "libGLESv3", "libEGL", "libstdc++", "libm", "libc", ],
+			shared_libs: ["liblog", "libdl", "libandroid", "libz", "libGLESv3", "libEGL", "libm", "libstdc++", "libc", ],
 		},
 	},
 	compile_multilib: "64",
@@ -203,7 +203,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/system_ext/lib64/libAvatarEngineRenderNative.so"],
-			shared_libs: ["libAvatarEngineRender", "liblog", "libdl", "libandroid", "libz", "libGLESv3", "libEGL", "libstdc++", "libm", "libc", ],
+			shared_libs: ["libAvatarEngineRender", "liblog", "libdl", "libandroid", "libz", "libGLESv3", "libEGL", "libm", "libstdc++", "libc", ],
 		},
 	},
 	compile_multilib: "64",
@@ -254,10 +254,9 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/system_ext/lib64/libFileExtender-jni.so"],
-			shared_libs: ["liblog", "libandroid", "libEGL", "libGLESv3", "libc", "libm", "libdl", ],
+			shared_libs: ["libextendfile_system_ext", "liblog", "libandroid", "libEGL", "libGLESv3", "libc", "libm", "libdl", ],
 		},
 	},
-	check_elf_files: false,
 	compile_multilib: "64",
 	prefer: true,
 	system_ext_specific: true,

@@ -32,7 +32,8 @@ function lib_to_package_fixup_system_ext_variants() {
         libSuperTextWrapper | \
             libXDocProcessSDK | \
             libYTCommon | \
-            libmpbase)
+            libmpbase | \
+            libextendfile)
             echo "$1_system_ext"
             ;;
         *)

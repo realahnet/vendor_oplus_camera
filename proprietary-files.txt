@@ -20,14 +20,13 @@ my_product/lib64/libFileExtender-jni.so:system_ext/lib64/libFileExtender-jni.so
 my_product/lib64/libOplusBlurPreviewJNI.so:system_ext/lib64/libOplusBlurPreviewJNI.so
 my_product/lib64/libSuperTextWrapper.so:system_ext/lib64/libSuperTextWrapper.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libXDocProcessSDK-jni.so:system_ext/lib64/libXDocProcessSDK-jni.so
-my_product/lib64/libXDocProcessSDK-jni.so:system_ext/lib64/libXDocProcessSDK-jni.qti.so;FIX_SONAME
 my_product/lib64/libXDocProcessSDK.so:system_ext/lib64/libXDocProcessSDK.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libYTCommon.so:system_ext/lib64/libYTCommon.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libarcsoft_wideselfie.so:system_ext/lib64/libarcsoft_wideselfie.so
 my_product/lib64/libcolorx-loader.so:system_ext/lib64/libcolorx-loader.so
 my_product/lib64/libcolorx.so:system_ext/lib64/libcolorx.so
 my_product/lib64/libcoolex.so:system_ext/lib64/libcoolex.so
-my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so;MODULE_SUFFIX=system_ext
+my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libjni_wideselfie.so:system_ext/lib64/libjni_wideselfie.so
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.so;FIX_SONAME
 my_product/lib64/libjnistblur_api.so:system_ext/lib64/libjnistblur_api.so;FIX_SONAME
