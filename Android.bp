@@ -652,3 +652,363 @@ dex_import {
 	system_ext_specific: true,
 }
 
+prebuilt_etc {
+	name: "BeardSharp.bin",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/BeardSharp.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "BeardSharp.frag",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/BeardSharp.frag",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "BeardSharp.vert",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/BeardSharp.vert",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreAddSRBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreAddSRBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreCalVarBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreCalVarBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreCalcSRBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreCalcSRBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreDepouchBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreDepouchBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreEyeMeanBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreEyeMeanBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreHighPassBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreHighPassBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreHighPassPreBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreHighPassPreBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreHoriFilterBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreHoriFilterBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreMakeupBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreMakeupBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreMakeupMultiFaceBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreMakeupMultiFaceBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreMakeupSingleFaceBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreMakeupSingleFaceBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreMorphBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreMorphBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreOnlywhitenBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreOnlywhitenBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreSkintuneBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreSkintuneBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreSkintuneMRTBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreSkintuneMRTBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreSurfaceBlurBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreSurfaceBlurBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreVertFilterBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreVertFilterBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "PreVertSurBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/PreVertSurBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinCalcHue.bin",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinCalcHue.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinCalcHue.frag",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinCalcHue.frag",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinCalcHue.vert",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinCalcHue.vert",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinColorBlur.bin",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinColorBlur.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinColorBlur.frag",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinColorBlur.frag",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinColorBlur.vert",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinColorBlur.vert",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinColorUnify.bin",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinColorUnify.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinColorUnify.frag",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinColorUnify.frag",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinColorUnify.vert",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinColorUnify.vert",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinHueUnify.bin",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinHueUnify.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinHueUnify.frag",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinHueUnify.frag",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "SkinHueUnify.vert",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/SkinHueUnify.vert",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreHoriFilterBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreHoriFilterBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreMorphBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreMorphBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreOnlywhitenBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreOnlywhitenBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreSkintuneBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreSkintuneBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreSkintuneMRTBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreSkintuneMRTBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreVertFilterBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreVertFilterBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
+prebuilt_etc {
+	name: "ThirdPartyPreVertSurBinary",
+	owner: "oplus",
+	src: "proprietary/odm/etc/camera/pfb_bin/ThirdPartyPreVertSurBinary.bin",
+	filename_from_src: true,
+	sub_dir: "camera/pfb_bin",
+	device_specific: true,
+}
+
