@@ -652,6 +652,9 @@ dex_import {
 	system_ext_specific: true,
 }
 
+// Include themed icon overlay subdirectory
+subdirs = ["overlay/CameraThemedIcon"]
+
 prebuilt_etc {
 	name: "BeardSharp.bin",
 	owner: "oplus",

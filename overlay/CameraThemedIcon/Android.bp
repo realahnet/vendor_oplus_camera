@@ -1,0 +1,7 @@
+runtime_resource_overlay {
+    name: "CameraThemedIcon",
+    package_name: "com.oplus.camera.themedicon.overlay",
+    target_package_name: "com.oplus.camera",
+    sdk_version: "current",
+    system_ext_specific: true,
+}

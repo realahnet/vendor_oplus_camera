@@ -449,6 +449,7 @@ PRODUCT_PACKAGES += \
     libst_sticker_jni \
     OplusAppPlatform \
     OplusCamera \
+    CameraThemedIcon \
     oplus-support-wrapper \
     com.oplus.camera.unit.sdk.adapter \
     com.oplus.camera.unit.sdk \
