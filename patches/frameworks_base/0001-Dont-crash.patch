@@ -1,0 +1,36 @@
+From 4dc379d1900412acd233718f5736fbdf80ea8cee Mon Sep 17 00:00:00 2001
+From: realahnet <syedmusicrealise@gmail.com>
+Date: Wed, 25 Mar 2026 10:26:31 +0500
+Subject: [PATCH] Dont crash
+
+---
+ .../hardware/camera2/impl/CameraDeviceImpl.java     | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/core/java/android/hardware/camera2/impl/CameraDeviceImpl.java b/core/java/android/hardware/camera2/impl/CameraDeviceImpl.java
+index 70583fbc2..614cfc8e7 100644
+--- a/core/java/android/hardware/camera2/impl/CameraDeviceImpl.java
++++ b/core/java/android/hardware/camera2/impl/CameraDeviceImpl.java
+@@ -1726,6 +1726,19 @@ public class CameraDeviceImpl extends CameraDevice
+ 
+                     // Repeating request was already stopped. Nothing more to do.
+                     return;
++                } catch (CameraAccessException e) {
++                    if (e.getReason() == CameraAccessException.CAMERA_ERROR) {
++                        // HAL returned ENOSYS (-38) — no active streaming request to cancel.
++                        // Treat as already stopped rather than propagating an error.
++                        if (DEBUG) {
++                            Log.v(TAG, "cancelRequest returned CAMERA_ERROR for request "
++                                    + requestId + ", treating as already stopped");
++                        }
++                        mFailedRepeatingRequestId = requestId;
++                        mFailedRepeatingRequestTypes = requestTypes;
++                        return;
++                    }
++                    throw e;
+                 }
+ 
+                 checkEarlyTriggerSequenceCompleteLocked(requestId, lastFrameNumber, requestTypes);
+-- 
+2.53.0
+

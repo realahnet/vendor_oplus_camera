@@ -1,0 +1,55 @@
+From 5242eb39ca833bb8b9849ecb2331d1f86ffe5fdc Mon Sep 17 00:00:00 2001
+From: realahnet <syedmusicrealise@gmail.com>
+Date: Fri, 20 Mar 2026 05:19:04 +0500
+Subject: [PATCH] soong select
+
+---
+ camera/device/3.2/default/Android.bp | 5 ++++-
+ camera/device/3.3/default/Android.bp | 5 ++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/camera/device/3.2/default/Android.bp b/camera/device/3.2/default/Android.bp
+index 7af517f..f8f2290 100644
+--- a/camera/device/3.2/default/Android.bp
++++ b/camera/device/3.2/default/Android.bp
+@@ -12,7 +12,6 @@ cc_library_shared {
+     name: "camera.device@3.2-impl",
+     defaults: [
+         "hidl_defaults",
+-        "camera_override_format_from_reserved_defaults",
+     ],
+     proprietary: true,
+     srcs: [
+@@ -43,4 +42,8 @@ cc_library_shared {
+     export_shared_lib_headers: [
+         "libfmq",
+     ],
++    cflags: select(soong_config_variable("camera", "override_format_from_reserved"), {
++        any @ value: ["-DTARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED"],
++        default: [],
++    }),
+ }
+diff --git a/camera/device/3.3/default/Android.bp b/camera/device/3.3/default/Android.bp
+index 32bbdf6..2e4a1dc 100644
+--- a/camera/device/3.3/default/Android.bp
++++ b/camera/device/3.3/default/Android.bp
+@@ -12,7 +12,6 @@ cc_library_shared {
+     name: "camera.device@3.3-impl",
+     defaults: [
+         "hidl_defaults",
+-        "camera_override_format_from_reserved_defaults",
+     ],
+     proprietary: true,
+     srcs: [
+@@ -44,4 +43,8 @@ cc_library_shared {
+     export_shared_lib_headers: [
+         "libfmq",
+     ],
++    cflags: select(soong_config_variable("camera", "override_format_from_reserved"), {
++        any @ value: ["-DTARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED"],
++        default: [],
++    }),
+ }
+-- 
+2.53.0
+
