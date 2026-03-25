@@ -1,4 +1,6 @@
 # Camera
+/(vendor|odm)/lib(64)?/libalog\.so                                           u:object_r:same_process_hal_file:s0
+/(vendor|odm)/lib(64)?/libalogencrypt\.so                                    u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/cache\.so    u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libnn\.so    u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libui\.so    u:object_r:same_process_hal_file:s0
@@ -524,13 +526,10 @@
 /vendor/lib(64)?/libdiag\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/mapper\.qti\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libmapperutils\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libqspm-mem-utils-vendor\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor.qti.qspmhal-V1-ndk\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/rfsa/adsp/libpmucount_skel\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libarcsoft_tricam_calibration\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor.qti.hardware.dsp-V1-ndk\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libarcsoft_tricam_verification\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.perf2-V1-ndk\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libarcsoft_calibverify_TriCamera\.so    u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/qnn/libQnnHtpV68Stub\.so    u:object_r:same_process_hal_file:s0
 

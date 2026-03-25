@@ -7,17 +7,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_COPY_FILES += \
     vendor/oplus/camera/proprietary/system_ext/etc/default-permissions/oplus_camera_default_grant_permissions_list.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/oplus_camera_default_grant_permissions_list.xml \
-    vendor/oplus/camera/proprietary/odm/etc/camera/aicolor/duallut_background.bmp:$(TARGET_COPY_OUT_ODM)/etc/camera/aicolor/duallut_background.bmp \
-    vendor/oplus/camera/proprietary/odm/etc/camera/aicolor/duallut_portrait.bmp:$(TARGET_COPY_OUT_ODM)/etc/camera/aicolor/duallut_portrait.bmp \
     vendor/oplus/camera/proprietary/odm/etc/camera/anc/fusion_model:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/fusion_model \
     vendor/oplus/camera/proprietary/odm/etc/camera/anc/fusion_model_post:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/fusion_model_post \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/merged_model:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/merged_model \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/merged_model_post:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/merged_model_post \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/video_retention_model:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/video_retention_model \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/video_retention_model_post:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/video_retention_model_post \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/videolut_background.png:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/videolut_background.png \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/videolut_portrait.png:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/videolut_portrait.png \
-    vendor/oplus/camera/proprietary/odm/etc/camera/anc/videolut_portrait_front.png:$(TARGET_COPY_OUT_ODM)/etc/camera/anc/videolut_portrait_front.png \
     vendor/oplus/camera/proprietary/odm/etc/camera/ancsegbase/anc_cl_kernel.cache:$(TARGET_COPY_OUT_ODM)/etc/camera/ancsegbase/anc_cl_kernel.cache \
     vendor/oplus/camera/proprietary/odm/etc/camera/ancsegbase/model.data:$(TARGET_COPY_OUT_ODM)/etc/camera/ancsegbase/model.data \
     vendor/oplus/camera/proprietary/odm/etc/camera/asd/class.dlc:$(TARGET_COPY_OUT_ODM)/etc/camera/asd/class.dlc \
@@ -236,14 +227,6 @@ PRODUCT_COPY_FILES += \
     vendor/oplus/camera/proprietary/odm/etc/camera/filters_res/film_grain_small.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/filters_res/film_grain_small.bin \
     vendor/oplus/camera/proprietary/odm/etc/camera/filters_res/lut_all_points.png:$(TARGET_COPY_OUT_ODM)/etc/camera/filters_res/lut_all_points.png \
     vendor/oplus/camera/proprietary/odm/etc/camera/filters_res/overlay_p4_3_weak.png:$(TARGET_COPY_OUT_ODM)/etc/camera/filters_res/overlay_p4_3_weak.png \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_00.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_00.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_01.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_01.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_02.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_02.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_03.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_03.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_10.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_10.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_11.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_11.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_12.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_12.bin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/fw_lut/skinLUTs_yuv16_13.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/fw_lut/skinLUTs_yuv16_13.bin \
     vendor/oplus/camera/proprietary/odm/etc/camera/gesture/modules/tt_hand_box_reg_v12.0.model:$(TARGET_COPY_OUT_ODM)/etc/camera/gesture/modules/tt_hand_box_reg_v12.0.model \
     vendor/oplus/camera/proprietary/odm/etc/camera/gesture/modules/tt_hand_det_v11.0.model:$(TARGET_COPY_OUT_ODM)/etc/camera/gesture/modules/tt_hand_det_v11.0.model \
     vendor/oplus/camera/proprietary/odm/etc/camera/gesture/modules/tt_hand_gesture_v11.1.model:$(TARGET_COPY_OUT_ODM)/etc/camera/gesture/modules/tt_hand_gesture_v11.1.model \
@@ -254,134 +237,11 @@ PRODUCT_COPY_FILES += \
     vendor/oplus/camera/proprietary/odm/etc/camera/gesture/tt_hand_gesture_v11.1.model:$(TARGET_COPY_OUT_ODM)/etc/camera/gesture/tt_hand_gesture_v11.1.model \
     vendor/oplus/camera/proprietary/odm/etc/camera/gesture/tt_hand_kp_v6.0.model:$(TARGET_COPY_OUT_ODM)/etc/camera/gesture/tt_hand_kp_v6.0.model \
     vendor/oplus/camera/proprietary/odm/etc/camera/gesture/tt_hand_lr_v3.0.model:$(TARGET_COPY_OUT_ODM)/etc/camera/gesture/tt_hand_lr_v3.0.model \
-    vendor/oplus/camera/proprietary/odm/etc/camera/micFilter/blue_pink_3.png:$(TARGET_COPY_OUT_ODM)/etc/camera/micFilter/blue_pink_3.png \
-    vendor/oplus/camera/proprietary/odm/etc/camera/micFilter/curve_0.png:$(TARGET_COPY_OUT_ODM)/etc/camera/micFilter/curve_0.png \
-    vendor/oplus/camera/proprietary/odm/etc/camera/micFilter/green_orange_2.png:$(TARGET_COPY_OUT_ODM)/etc/camera/micFilter/green_orange_2.png \
-    vendor/oplus/camera/proprietary/odm/etc/camera/micFilter/yellow_green_1.png:$(TARGET_COPY_OUT_ODM)/etc/camera/micFilter/yellow_green_1.png \
+    vendor/oplus/camera/proprietary/odm/etc/camera/license_release_fdc.lic:$(TARGET_COPY_OUT_ODM)/etc/camera/license_release_fdc.lic \
     vendor/oplus/camera/proprietary/odm/etc/camera/model/DocDetectV15.xbin:$(TARGET_COPY_OUT_ODM)/etc/camera/model/DocDetectV15.xbin \
-    vendor/oplus/camera/proprietary/odm/etc/camera/motionblur/model.data:$(TARGET_COPY_OUT_ODM)/etc/camera/motionblur/model.data \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut0:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut0 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut1:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut1 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut10:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut10 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut11:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut11 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut12:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut12 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut13:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut13 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut14:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut14 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut15:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut15 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut16:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut16 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut17:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut17 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut18:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut18 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut2:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut2 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut3:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut3 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut4:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut4 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut5:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut5 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut6:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut6 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut7:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut7 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut8:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut8 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/colorLut9:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/colorLut9 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut0:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut0 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut1:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut1 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut10:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut10 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut11:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut11 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut12:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut12 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut13:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut13 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut14:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut14 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut15:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut15 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut16:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut16 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut17:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut17 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut18:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut18 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut2:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut2 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut3:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut3 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut4:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut4 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut5:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut5 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut6:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut6 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut7:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut7 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut8:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut8 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/curveLut9:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/curveLut9 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/frameSet.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/frameSet.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param0.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param0.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param1.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param1.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param10.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param10.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param11.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param11.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param12.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param12.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param13.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param13.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param14.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param14.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param15.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param15.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param16.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param16.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param17.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param17.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param18.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param18.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param2.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param2.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param3.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param3.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param4.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param4.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param5.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param5.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param6.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param6.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param7.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param7.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param8.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param8.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/param9.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/param9.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/photoSet.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/photoSet.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/platformSet.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/platformSet.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/normal/sceneList.txt:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/normal/sceneList.txt \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut0:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut0 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut1:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut1 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut10:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut10 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut11:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut11 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut12:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut12 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut13:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut13 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut14:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut14 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut15:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut15 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut16:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut16 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut17:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut17 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut18:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut18 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut2:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut2 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut3:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut3 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut4:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut4 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut5:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut5 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut6:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut6 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut7:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut7 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut8:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut8 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/colorLut9:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/colorLut9 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut0:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut0 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut1:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut1 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut10:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut10 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut11:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut11 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut12:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut12 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut13:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut13 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut14:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut14 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut15:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut15 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut16:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut16 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut17:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut17 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut18:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut18 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut2:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut2 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut3:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut3 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut4:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut4 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut5:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut5 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut6:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut6 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut7:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut7 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut8:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut8 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/curveLut9:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/curveLut9 \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/frameSet.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/frameSet.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param0.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param0.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param1.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param1.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param10.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param10.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param11.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param11.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param12.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param12.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param13.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param13.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param14.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param14.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param15.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param15.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param16.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param16.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param17.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param17.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param18.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param18.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param2.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param2.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param3.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param3.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param4.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param4.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param5.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param5.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param6.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param6.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param7.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param7.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param8.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param8.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/param9.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/param9.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/photoSet.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/photoSet.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/platformSet.ini:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/platformSet.ini \
-    vendor/oplus/camera/proprietary/odm/etc/camera/pf/PerfectColorSet/portrait/sceneList.txt:$(TARGET_COPY_OUT_ODM)/etc/camera/pf/PerfectColorSet/portrait/sceneList.txt \
+    vendor/oplus/camera/proprietary/odm/etc/camera/model/license.lic:$(TARGET_COPY_OUT_ODM)/etc/camera/model/license.lic \
+    vendor/oplus/camera/proprietary/odm/etc/camera/omoji/assets/sdk_assets/ai_face_processor_e51.bundle:$(TARGET_COPY_OUT_ODM)/etc/camera/omoji/assets/sdk_assets/ai_face_processor_e51.bundle \
+    vendor/oplus/camera/proprietary/odm/etc/camera/omoji/assets/sdk_assets/controller_cpp.bundle:$(TARGET_COPY_OUT_ODM)/etc/camera/omoji/assets/sdk_assets/controller_cpp.bundle \
     vendor/oplus/camera/proprietary/odm/etc/camera/singleblur/license_release.license:$(TARGET_COPY_OUT_ODM)/etc/camera/singleblur/license_release.license \
     vendor/oplus/camera/proprietary/odm/etc/camera/sticker/M_SenseME_Action_5.2.12.model:$(TARGET_COPY_OUT_ODM)/etc/camera/sticker/M_SenseME_Action_5.2.12.model \
     vendor/oplus/camera/proprietary/odm/etc/camera/sticker/material/animoji/data.zip:$(TARGET_COPY_OUT_ODM)/etc/camera/sticker/material/animoji/data.zip \
@@ -413,6 +273,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libpenguin \
+    libAPSClient-alog-jni \
     libAPSClient-cmd-jni \
     libAPSClient-jni \
     libAncFilter_jni \
@@ -428,16 +289,15 @@ PRODUCT_PACKAGES += \
     libCombineLutJni \
     libFileExtender-jni \
     libHeifEncoderWrapper \
+    libMsEffectSdk \
     libNativeWinBuffExchange \
     libOplusBlurPreviewJNI \
+    libOplusStringJNI \
     libSuperTextWrapper_system_ext \
     libXDocProcessSDK-jni \
     libXDocProcessSDK_system_ext \
     libYTCommon_system_ext \
     libarcsoft_wideselfie \
-    libcolorx-loader \
-    libcolorx \
-    libcoolex \
     libextendfile_system_ext \
     libjni_wideselfie \
     libjnisingleblur_api \
@@ -447,10 +307,10 @@ PRODUCT_PACKAGES += \
     libsingle_camera_bokeh_native \
     libst_mobile \
     libst_sticker_jni \
+    libOplusSecurity \
+    AONService \
     OplusAppPlatform \
     OplusCamera \
-    CameraThemedIcon \
-    oplus-support-wrapper \
     com.oplus.camera.unit.sdk.adapter \
     com.oplus.camera.unit.sdk \
     BeardSharp.bin \

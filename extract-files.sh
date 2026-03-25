@@ -14,6 +14,8 @@ VENDOR=oplus
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
+export TARGET_ENABLE_CHECKELF=true
+
 ANDROID_ROOT="${MY_DIR}/../../.."
 
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
