@@ -1,0 +1,28 @@
+From 28a2e44da12e45a1935772a16ab24a5c9d4fcbf7 Mon Sep 17 00:00:00 2001
+From: realahnet <syedmusicrealise@gmail.com>
+Date: Fri, 27 Mar 2026 22:09:59 +0500
+Subject: [PATCH] libcameraservice: Dont throw invalid stream error for format
+ 0x20
+
+* Fixes portrait mode on oplus cam.
+Apparently this is not listed as a supported format but the HAL supports it
+---
+ .../camera/libcameraservice/utils/SessionConfigurationUtils.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/services/camera/libcameraservice/utils/SessionConfigurationUtils.cpp b/services/camera/libcameraservice/utils/SessionConfigurationUtils.cpp
+index 417e22b427..0516259349 100644
+--- a/services/camera/libcameraservice/utils/SessionConfigurationUtils.cpp
++++ b/services/camera/libcameraservice/utils/SessionConfigurationUtils.cpp
+@@ -569,7 +569,7 @@ binder::Status createConfiguredSurface(
+     // Round dimensions to the nearest dimensions available for this format.
+     // Only do the rounding if the client doesn't ask to respect the surface
+     // size.
+-    if (flexibleConsumer && isPublicFormat(format) && !respectSurfaceSize &&
++    if (flexibleConsumer && isPublicFormat(format) && format != 0x20 && !respectSurfaceSize &&
+             !SessionConfigurationUtils::roundBufferDimensionNearest(width, height,
+             format, dataSpace, physicalCameraMetadata, foundInMaxRes, /*out*/&width,
+             /*out*/&height, isPriviledgedClient)) {
+-- 
+2.53.0
+
