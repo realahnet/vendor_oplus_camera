@@ -3,10 +3,11 @@
 
 # Camera
 my_product/app/AONService/AONService.apk:system_ext/priv-app/AONService/AONService.apk
-my_product/app/OplusCamera/OplusCamera.apk:system_ext/priv-app/OplusCamera/OplusCamera.apk|e81a3e4dd39e4f015f0f7f6cc79b1f32809c7b31
+my_product/app/OplusCamera/OplusCamera.apk:system_ext/priv-app/OplusCamera/OplusCamera.apk|8ba7cebdc07232d0bd91899459a5bdbf2f4e3fce
 my_product/lib64/libAPSClient-cmd-jni.so:system_ext/lib64/libAPSClient-cmd-jni.so
 my_product/lib64/libAPSClient-jni.so:system_ext/lib64/libAPSClient-jni.so
 my_product/lib64/libAPSClient-alog-jni.so:system_ext/lib64/libAPSClient-alog-jni.so
+my_product/lib64/libApsSuperEISPreviewJni.so:system_ext/lib64/libApsSuperEISPreviewJni.so
 my_product/lib64/libAncFilter_jni.so:system_ext/lib64/libAncFilter_jni.so
 my_product/lib64/libAncHumBokeh-jni.so:system_ext/lib64/libAncHumBokeh-jni.so
 my_product/lib64/libAncHumanDoubleExposure-jni.so:system_ext/lib64/libAncHumanDoubleExposure-jni.so
@@ -25,8 +26,10 @@ my_product/lib64/libSuperTextWrapper.so:system_ext/lib64/libSuperTextWrapper.so;
 my_product/lib64/libXDocProcessSDK-jni.so:system_ext/lib64/libXDocProcessSDK-jni.so
 my_product/lib64/libXDocProcessSDK.so:system_ext/lib64/libXDocProcessSDK.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libYTCommon.so:system_ext/lib64/libYTCommon.so;MODULE_SUFFIX=_system_ext
+my_product/lib64/libarcsoft_panorama_burstcapture.so:system_ext/lib64/libarcsoft_panorama_burstcapture.so
 my_product/lib64/libarcsoft_wideselfie.so:system_ext/lib64/libarcsoft_wideselfie.so
 my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so;MODULE_SUFFIX=_system_ext
+my_product/lib64/libjni_burstpmk.so:system_ext/lib64/libjni_burstpmk.so
 my_product/lib64/libjni_wideselfie.so:system_ext/lib64/libjni_wideselfie.so
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.so;FIX_SONAME
 my_product/lib64/libjnistblur_api.so:system_ext/lib64/libjnistblur_api.so;FIX_SONAME

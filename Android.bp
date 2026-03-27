@@ -195,6 +195,23 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libApsSuperEISPreviewJni",
+	owner: "oplus",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libApsSuperEISPreviewJni.so"],
+			shared_libs: ["libvndksupport", "liblog", "libandroid", "libjnigraphics", "libEGL", "libGLESv1_CM", "libGLESv3", "libz", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libAvatarEngineRender",
 	owner: "oplus",
 	strip: {
@@ -436,6 +453,23 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libarcsoft_panorama_burstcapture",
+	owner: "oplus",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libarcsoft_panorama_burstcapture.so"],
+			shared_libs: ["liblog", "libdl", "libc", "libm", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libarcsoft_wideselfie",
 	owner: "oplus",
 	strip: {
@@ -463,6 +497,23 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/system_ext/lib64/libextendfile.so"],
 			shared_libs: ["liblog", "libm", "libdl", "libc", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libjni_burstpmk",
+	owner: "oplus",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libjni_burstpmk.so"],
+			shared_libs: ["libjnigraphics", "liblog", "libandroid", "libc", "libm", "libstdc++", "libdl", "libmpbase_system_ext", "libarcsoft_panorama_burstcapture", ],
 		},
 	},
 	compile_multilib: "64",
@@ -631,7 +682,7 @@ android_app_import {
 	certificate: "platform",
 	privileged: true,
 	system_ext_specific: true,
-	enforce_uses_libs: false,
+        enforce_uses_libs: false,
 }
 
 android_app_import {
@@ -650,7 +701,7 @@ android_app_import {
 	certificate: "platform",
 	privileged: true,
 	system_ext_specific: true,
-	enforce_uses_libs: false,
+        enforce_uses_libs: false,
 }
 
 dex_import {
