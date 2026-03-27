@@ -9,3 +9,9 @@ prebuilt_etc {
     sub_dir: "init",
     device_specific: true,
 }
+
+prebuilt_etc {
+    name: "init.oplus.face.rc",
+    src: "init.oplus.face.rc",
+    device_specific: true,
+}

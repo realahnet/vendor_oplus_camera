@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.oplus.camera.rc
+    init.oplus.camera.rc \
+    init.oplus.face.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \

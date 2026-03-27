@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import /odm/etc/init.oplus.face.rc
+
 on post-fs-data
 
     # Bind mount fastrpc_shell_3 for labelling
