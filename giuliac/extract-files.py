@@ -17,7 +17,7 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
-
+from aps_heif_fixup import patch_apsclient_heif_selector_file
 
 def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
     """
@@ -54,7 +54,17 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_system_ext_suffix,
 }
 
+def blob_fixup_apsclient_force_java_heif(ctx, file, file_path, *args, **kwargs):
+    # OPlus supports two HEIF handoffs: optional native helpers when dlopen can
+    # resolve them, otherwise its Java-reflection fallback. Stock keeps this APS
+    # client in /product and the helpers in /system_ext, so product namespace
+    # isolation selects reflection. Our system_ext remap co-located them and
+    # unintentionally enabled the native route that stock CPH2747 does not use.
+    patch_apsclient_heif_selector_file(file_path)
+
 blob_fixups = {
+    'system_ext/lib64/libAPSClient-cmd-jni.so': blob_fixup()
+        .call(blob_fixup_apsclient_force_java_heif),
     'system_ext/priv-app/OplusCamera/OplusCamera.apk': blob_fixup()
         .apktool_patch('patches'),
     'system_ext/framework/com.oplus.camera.unit.sdk.jar': blob_fixup()
