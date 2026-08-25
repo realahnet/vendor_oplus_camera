@@ -94,7 +94,8 @@ on property:sys.camera.user.removed=*
         ),
     'system_ext/lib64/libcsextimpl.so': blob_fixup()
         .replace_needed('android.hardware.camera.device-V3-ndk.so', 'android.hardware.camera.device-V4-ndk.so')
-        .replace_needed('android.hardware.camera.provider-V3-ndk.so', 'android.hardware.camera.provider-V4-ndk.so'),
+        .replace_needed('android.hardware.camera.provider-V3-ndk.so', 'android.hardware.camera.provider-V4-ndk.so')
+        .replace_needed('libbase.so', 'libbase-stock.so'),
 }  # fmt: skip
 
 namespace_imports = [
