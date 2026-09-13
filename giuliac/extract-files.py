@@ -18,6 +18,7 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 from aps_heif_fixup import patch_apsclient_heif_selector_file
+from native_winbuff_fixup import patch_native_win_buff_exchange_file
 
 def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
     """
@@ -62,9 +63,18 @@ def blob_fixup_apsclient_force_java_heif(ctx, file, file_path, *args, **kwargs):
     # unintentionally enabled the native route that stock CPH2747 does not use.
     patch_apsclient_heif_selector_file(file_path)
 
+def blob_fixup_native_winbuff_exchange(ctx, file, file_path, *args, **kwargs):
+    # The blob dispatches releaseBuffer through the BufferQueueConsumer vtable
+    # using the legacy 5-arg ABI (fence in x5). AOSP 17 uses the modern 3-arg
+    # ABI (fence in x3). Patch the argument setup so the fence pointer lands
+    # in x3, making the blob compatible with the stock A17 vtable.
+    patch_native_win_buff_exchange_file(file_path)
+
 blob_fixups = {
     'system_ext/lib64/libAPSClient-cmd-jni.so': blob_fixup()
         .call(blob_fixup_apsclient_force_java_heif),
+    'system_ext/lib64/libNativeWinBuffExchange.so': blob_fixup()
+        .call(blob_fixup_native_winbuff_exchange),
     'system_ext/priv-app/OplusCamera/OplusCamera.apk': blob_fixup()
         .apktool_patch('patches'),
     'system_ext/framework/com.oplus.camera.unit.sdk.jar': blob_fixup()
