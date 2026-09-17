@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 13R (CPH2691_16.0.8.300(EX01)).
+## are from Oneplus 13R (OxygenOS 16 PKG110_16.0.10.500(EX01))
 
 # Camera
 my_product/app/OplusCamera/OplusCamera.apk:system_ext/priv-app/OplusCamera/OplusCamera.apk;OVERRIDES=Camera2,GoogleCameraGo
@@ -180,3 +180,5 @@ my_product/etc/camera/engineer_camera_config.json:product/etc/camera/engineer_ca
 system_ext/lib64/liboplushwui_jni.so
 
 system_ext/lib64/libcsextimpl.so
+
+system/lib64/libbase.so:system_ext/lib64/libbase-stock.so;FIX_SONAME

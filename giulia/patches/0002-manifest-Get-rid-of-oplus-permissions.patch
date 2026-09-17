@@ -1,14 +1,14 @@
-From cd7cc82570486679a9a1a81a5f671f3b33965a90 Mon Sep 17 00:00:00 2001
-From: port <port@local>
-Date: Tue, 30 Jun 2026 14:07:21 +0500
+From 54d9a440008f3660c3f7a6302fe196527a02c72f Mon Sep 17 00:00:00 2001
+From: Hecheng Yu <kde-yyds@qq.com>
+Date: Thu, 11 Jun 2026 14:44:06 +0800
 Subject: [PATCH] manifest: Get rid of oplus permissions
 
 ---
- AndroidManifest.xml | 66 ++++++++++++++++++++++-----------------------
- 1 file changed, 33 insertions(+), 33 deletions(-)
+ AndroidManifest.xml | 68 ++++++++++++++++++++++-----------------------
+ 1 file changed, 34 insertions(+), 34 deletions(-)
 
 diff --git a/AndroidManifest.xml b/AndroidManifest.xml
-index f32d1e95..642ca5af 100644
+index 413db3be..e9e4857b 100644
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
 @@ -260,7 +260,7 @@
@@ -244,6 +244,13 @@ index f32d1e95..642ca5af 100644
          <meta-data android:name="com.oplus.epona:epona" android:value="2.6.2"/>
          <provider android:authorities="com.oplus.camera.tingle" android:directBootAware="true" android:exported="false" android:multiprocess="true" android:name="com.oplus.tingle.ipc.internal.TingleProvider"/>
          <meta-data android:name="com.oplus.tingle:tingle" android:value="3.1.0"/>
+@@ -571,4 +571,4 @@
+         <meta-data android:name="dependencies:implementation:com.oplus.utils:reflect" android:value="2.1.1"/>
+         <meta-data android:name="com.oplus.utils:loggerUtils" android:value="1.0.1"/>
+     </application>
+-</manifest>
+\ No newline at end of file
++</manifest>
 -- 
-2.54.0
+2.55.0
 

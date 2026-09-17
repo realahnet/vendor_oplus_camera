@@ -17,7 +17,8 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
-
+from aps_heif_fixup import patch_apsclient_heif_selector_file
+from native_winbuff_fixup import patch_native_win_buff_exchange_file
 
 def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
     """
@@ -54,7 +55,26 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_system_ext_suffix,
 }
 
+def blob_fixup_apsclient_force_java_heif(ctx, file, file_path, *args, **kwargs):
+    # OPlus supports two HEIF handoffs: optional native helpers when dlopen can
+    # resolve them, otherwise its Java-reflection fallback. Stock keeps this APS
+    # client in /product and the helpers in /system_ext, so product namespace
+    # isolation selects reflection. Our system_ext remap co-located them and
+    # unintentionally enabled the native route that stock CPH2747 does not use.
+    patch_apsclient_heif_selector_file(file_path)
+
+def blob_fixup_native_winbuff_exchange(ctx, file, file_path, *args, **kwargs):
+    # The blob dispatches releaseBuffer through the BufferQueueConsumer vtable
+    # using the legacy 5-arg ABI (fence in x5). AOSP 17 uses the modern 3-arg
+    # ABI (fence in x3). Patch the argument setup so the fence pointer lands
+    # in x3, making the blob compatible with the stock A17 vtable.
+    patch_native_win_buff_exchange_file(file_path)
+
 blob_fixups = {
+    'system_ext/lib64/libAPSClient-cmd-jni.so': blob_fixup()
+        .call(blob_fixup_apsclient_force_java_heif),
+    'system_ext/lib64/libNativeWinBuffExchange.so': blob_fixup()
+        .call(blob_fixup_native_winbuff_exchange),
     'system_ext/priv-app/OplusCamera/OplusCamera.apk': blob_fixup()
         .apktool_patch('patches'),
     'system_ext/framework/com.oplus.camera.unit.sdk.jar': blob_fixup()
@@ -81,7 +101,11 @@ on property:sys.camera.user.removed=*
 on property:sys.camera.user.removed=*
     #delete_recursion /data/vendor/camera_process/${sys.camera.user.removed}
 ''',
-        )
+        ),
+    'system_ext/lib64/libcsextimpl.so': blob_fixup()
+        .replace_needed('android.hardware.camera.device-V3-ndk.so', 'android.hardware.camera.device-V4-ndk.so')
+        .replace_needed('android.hardware.camera.provider-V3-ndk.so', 'android.hardware.camera.provider-V4-ndk.so')
+        .replace_needed('libbase.so', 'libbase-stock.so'),
 }  # fmt: skip
 
 namespace_imports = [
