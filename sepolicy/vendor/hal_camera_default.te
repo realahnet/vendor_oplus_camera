@@ -14,3 +14,9 @@ allow hal_camera_default proc:file { write open getattr };
 
 # Binder: HAL ↔ camera app
 allow hal_camera_default opluscamera_app:binder { call transfer };
+
+# Scheduler proc
+allow hal_camera_default vendor_proc_oplus_scheduler:dir search;
+
+# SoC ID property
+get_prop(hal_camera_default, vendor_soc_id_prop)
