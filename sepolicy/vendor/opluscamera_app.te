@@ -25,6 +25,8 @@ allow opluscamera_app vendor_camera_data_file:file { read open write create unli
 # for non-HAL domains. The camera app only needs to open/read/ioctl for DSP
 # session setup; actual writes go through the HAL.
 allow opluscamera_app vendor_qdsp_device:chr_file { ioctl read };
+dontaudit opluscamera_app vendor_qdsp_device:chr_file open;
+typeattribute opluscamera_app vendor_hal_dspmanager_client;
 
 # selinuxfs
 allow opluscamera_app selinuxfs:file { read open };
@@ -41,7 +43,8 @@ allow opluscamera_app vendor_file:dir r_dir_perms;
 allow opluscamera_app same_process_hal_file:file { read open getattr map execute };
 
 # Binder: camera app ↔ camera HAL
-allow opluscamera_app hal_camera_default:binder { call transfer };
+binder_call(opluscamera_app, hal_camera_default)
+binder_call(hal_camera_default, opluscamera_app)
 
 # Camera properties
 get_prop(opluscamera_app, vendor_camera_prop)
