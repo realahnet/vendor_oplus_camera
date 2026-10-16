@@ -1,16 +1,16 @@
-From a8826915fd86aacba397b9b1fc73ec2b0c61d620 Mon Sep 17 00:00:00 2001
+From 2ea37e2668aed59c8b402abd3738156d07f8cad0 Mon Sep 17 00:00:00 2001
 From: Hecheng Yu <kde-yyds@qq.com>
 Date: Tue, 26 May 2026 17:21:52 +0800
 Subject: [PATCH] Use default font instead of OPlus specific ones
 
 ---
- smali/t7/q3.smali | 294 +---------------------------------------------
+ smali/t7/n3.smali | 294 +---------------------------------------------
  1 file changed, 3 insertions(+), 291 deletions(-)
 
-diff --git a/smali/t7/q3.smali b/smali/t7/q3.smali
-index c666e532..ea268da3 100644
---- a/smali/t7/q3.smali
-+++ b/smali/t7/q3.smali
+diff --git a/smali/t7/n3.smali b/smali/t7/n3.smali
+index d4976cdf..c76fedeb 100644
+--- a/smali/t7/n3.smali
++++ b/smali/t7/n3.smali
 @@ -263,300 +263,12 @@
  .end method
  
@@ -19,7 +19,7 @@ index c666e532..ea268da3 100644
 +    .locals 1
  
 -    .line 1
--    sget-object v0, Lt7/k0;->a:Landroid/graphics/Typeface;
+-    sget-object v0, Lt7/j0;->a:Landroid/graphics/Typeface;
 +    sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
  
      .line 2
@@ -121,7 +121,7 @@ index c666e532..ea268da3 100644
 -    .line 48
 -    .line 49
 -    :try_start_1
--    sget-boolean v3, Lt7/q3;->q:Z
+-    sget-boolean v3, Lt7/n3;->q:Z
 -
 -    .line 50
 -    .line 51
@@ -202,7 +202,7 @@ index c666e532..ea268da3 100644
 -
 -    .line 87
 -    :cond_0
--    sget-boolean p0, Lt7/q3;->q:Z
+-    sget-boolean p0, Lt7/n3;->q:Z
 -
 -    .line 88
 -    .line 89
@@ -301,12 +301,12 @@ index c666e532..ea268da3 100644
 -    .line 132
 -    :cond_1
 -    :goto_2
--    sput-object v2, Lt7/k0;->a:Landroid/graphics/Typeface;
+-    sput-object v2, Lt7/j0;->a:Landroid/graphics/Typeface;
 -
 -    .line 133
 -    .line 134
 -    :cond_2
--    sget-object p0, Lt7/k0;->a:Landroid/graphics/Typeface;
+-    sget-object p0, Lt7/j0;->a:Landroid/graphics/Typeface;
 -
 -    .line 135
 -    .line 136
@@ -316,5 +316,5 @@ index c666e532..ea268da3 100644
  
  .method public static b()Landroid/graphics/Typeface;
 -- 
-2.55.0
+2.56.0
 
