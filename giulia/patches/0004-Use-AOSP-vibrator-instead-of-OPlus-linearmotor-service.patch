@@ -1,0 +1,76 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: realahnet <syedmusicrealise@gmail.com>
+Date: Sun, 25 Oct 2026 00:06:10 +0500
+Subject: [PATCH] Use AOSP vibrator instead of the OPlus linearmotor service
+
+The OPlus camera app only vibrates through the OPlus-only system service
+com.oplus.os.LinearmotorVibrator, obtained from
+Context.getSystemService("linearmotor"). That service does not exist on AOSP,
+so the lookup returns null and every camera haptic (shutter, slider ticks,
+UI feedback) is silently dropped.
+
+Construct the vibrator directly instead. com.oplus.os.LinearmotorVibrator is
+shipped on the boot classpath by hardware/oplus/oplus-fwk and is now backed by
+the standard AOSP Vibrator/VibratorManager, so no OPlus framework service and
+no frameworks/base change is required.
+
+Two call sites are patched:
+  * smali/com/oplus/camera/f$k.smali   (VibrateManager init -> d7/k)
+  * smali_classes27/u3/a.smali         (VibrateUtils -> COUI seekbar/picker)
+
+Assisted by Deepseek v4.1 Flash
+
+---
+
+diff --git a/smali/com/oplus/camera/f$k.smali b/smali/com/oplus/camera/f$k.smali
+index deb38d15..7b508c23 100644
+--- a/smali/com/oplus/camera/f$k.smali
++++ b/smali/com/oplus/camera/f$k.smali
+@@ -44,19 +44,15 @@
+ 
+     .line 13
+     .line 14
+-    const-string v1, "linearmotor"
++    invoke-static {p0}, Lcom/oplus/os/LinearmotorVibrator;->create(Landroid/content/Context;)Lcom/oplus/os/LinearmotorVibrator;
+ 
+     .line 15
+     .line 16
+-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+     .line 17
+     .line 18
+     .line 19
+-    move-result-object p0
+-
+     .line 20
+-    check-cast p0, Lcom/oplus/os/LinearmotorVibrator;
++    move-result-object p0
+ 
+     .line 21
+     .line 22
+diff --git a/smali_classes27/u3/a.smali b/smali_classes27/u3/a.smali
+index 3c5189a0..578106db 100644
+--- a/smali_classes27/u3/a.smali
++++ b/smali_classes27/u3/a.smali
+@@ -78,19 +78,15 @@
+ 
+     .line 15
+     :cond_0
+-    const-string v1, "linearmotor"
++    invoke-static {p0}, Lcom/oplus/os/LinearmotorVibrator;->create(Landroid/content/Context;)Lcom/oplus/os/LinearmotorVibrator;
+ 
+     .line 16
+     .line 17
+-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+     .line 18
+     .line 19
+     .line 20
+-    move-result-object p0
+-
+     .line 21
+-    check-cast p0, Lcom/oplus/os/LinearmotorVibrator;
++    move-result-object p0
+     :try_end_0
+     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+ 
