@@ -1,17 +1,17 @@
-From 22c1a878739d4ef895a65009df87a6ce7e4d6e34 Mon Sep 17 00:00:00 2001
+From 3381ce8bfd9bb1aee1ef944e3668a718d286f6cc Mon Sep 17 00:00:00 2001
 From: Hecheng Yu <kde-yyds@qq.com>
 Date: Tue, 26 May 2026 17:21:52 +0800
 Subject: [PATCH] Use default font instead of OPlus specific ones
 
 ---
- smali/r7/s3.smali | 293 +---------------------------------------------
+ smali/s6/p2.smali | 293 +---------------------------------------------
  1 file changed, 3 insertions(+), 290 deletions(-)
 
-diff --git a/smali/r7/s3.smali b/smali/r7/s3.smali
-index 0c46cdad..76cdb615 100644
---- a/smali/r7/s3.smali
-+++ b/smali/r7/s3.smali
-@@ -263,300 +263,13 @@
+diff --git a/smali/s6/p2.smali b/smali/s6/p2.smali
+index 344f4625..dffb6b58 100644
+--- a/smali/s6/p2.smali
++++ b/smali/s6/p2.smali
+@@ -275,300 +275,13 @@
  .end method
  
  .method public static a(Landroid/content/Context;)Landroid/graphics/Typeface;
@@ -19,7 +19,7 @@ index 0c46cdad..76cdb615 100644
 +    .locals 1
  
      .line 1
--    sget-object v0, Lr7/k0;->a:Landroid/graphics/Typeface;
+-    sget-object v0, Ls6/h0;->a:Landroid/graphics/Typeface;
 +    sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
  
      .line 2
@@ -121,7 +121,7 @@ index 0c46cdad..76cdb615 100644
 -    .line 48
 -    .line 49
 -    :try_start_1
--    sget-boolean v3, Lr7/s3;->q:Z
+-    sget-boolean v3, Ls6/p2;->s:Z
 -
 -    .line 50
 -    .line 51
@@ -202,7 +202,7 @@ index 0c46cdad..76cdb615 100644
 -
 -    .line 87
 -    :cond_0
--    sget-boolean p0, Lr7/s3;->q:Z
+-    sget-boolean p0, Ls6/p2;->s:Z
 -
 -    .line 88
 -    .line 89
@@ -248,7 +248,7 @@ index 0c46cdad..76cdb615 100644
 -
 -    .line 106
 -    .line 107
--    invoke-static {v0, v1, p0}, Lj8/b;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+-    invoke-static {v0, v1, p0}, Li7/a;->g(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 -    :try_end_2
 -    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
 -    .catch Ljava/lang/NoSuchMethodError; {:try_start_2 .. :try_end_2} :catch_0
@@ -294,19 +294,19 @@ index 0c46cdad..76cdb615 100644
 -    move-result-object p0
 -
 -    .line 129
--    invoke-static {v0, p0}, Lj8/b;->h(Ljava/lang/String;Ljava/lang/String;)V
+-    invoke-static {v0, p0}, Li7/a;->f(Ljava/lang/String;Ljava/lang/String;)V
 -
 -    .line 130
 -    .line 131
 -    .line 132
 -    :cond_1
 -    :goto_2
--    sput-object v2, Lr7/k0;->a:Landroid/graphics/Typeface;
+-    sput-object v2, Ls6/h0;->a:Landroid/graphics/Typeface;
 -
 -    .line 133
 -    .line 134
 -    :cond_2
--    sget-object p0, Lr7/k0;->a:Landroid/graphics/Typeface;
+-    sget-object p0, Ls6/h0;->a:Landroid/graphics/Typeface;
 -
 -    .line 135
 -    .line 136
@@ -316,5 +316,5 @@ index 0c46cdad..76cdb615 100644
  
  .method public static b()Landroid/graphics/Typeface;
 -- 
-2.55.0
+2.56.0
 

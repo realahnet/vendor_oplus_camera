@@ -44,13 +44,11 @@ my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.s
 my_product/lib64/libjnistblur_api.so:system_ext/lib64/libjnistblur_api.so;FIX_SONAME
 my_product/lib64/libmpbase.so:system_ext/lib64/libmpbase.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libsingle_camera_bokeh_native.so:system_ext/lib64/libsingle_camera_bokeh_native.so
-my_product/lib64/libsingle_camera_bokeh2_native.so:system_ext/lib64/libsingle_camera_bokeh2_native.so
 my_product/lib64/libst_mobile.so:system_ext/lib64/libst_mobile.so
 my_product/lib64/libst_sticker_jni.so:system_ext/lib64/libst_sticker_jni.so;FIX_SONAME
 
 odm/lib64/libOplusSecurity.so
 
-my_product/lib64/libAPSClient-alog-jni.so:system_ext/lib64/libAPSClient-alog-jni.so
 my_product/product_overlay/etc/permissions/oplus_camera_default_grant_permissions_list.xml:system_ext/etc/default-permissions/oplus_camera_default_grant_permissions_list.xml
 my_product/product_overlay/framework/com.oplus.camera.unit.sdk.adapter.jar:system_ext/framework/com.oplus.camera.unit.sdk.adapter.jar
 my_product/product_overlay/framework/com.oplus.camera.unit.sdk.jar:system_ext/framework/com.oplus.camera.unit.sdk.jar

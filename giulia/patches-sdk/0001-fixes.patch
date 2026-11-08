@@ -1,22 +1,25 @@
-From 146e52ea1e5841d5d68f420669b67ba9dfd50ea0 Mon Sep 17 00:00:00 2001
+From a07d593c076bbe6e7d3484742713b9354c900db9 Mon Sep 17 00:00:00 2001
 From: spkal01 <kalligeross@gmail.com>
-Date: Mon, 1 Jun 2026 14:53:25 +0800
+Date: Sun, 8 Nov 2026 14:02:45 +0500
 Subject: [PATCH] fixes
+
+(colorsos 15 rebuild of the equivalent 16.0.10.500 fix set; UxThreadPool
+and consumer/apsAdapter/ALog do not exist in the A15 sdk jar, their
+hunks were dropped. A15's HdrTransformPlatform only has sLibraryLoaded
+as an explicit `= false` initializer; sAlgoExists is already implicit.)
 
 ---
  .../oplus/protobuf/ExtensionRegistryLite.smali   |  2 +-
- .../hdrtransform/HdrTransformPlatform.smali      |  4 ++--
- smali/com/oplus/ocs/camera/UxThreadPool.smali    |  4 ++--
+ .../hdrtransform/HdrTransformPlatform.smali      |  2 +-
  .../common/parameter/apsadapter/ApsHelper.smali  |  2 +-
  .../common/util/OsenseKeyThreadHelper.smali      |  2 +-
  .../ocs/camera/consumer/ApsDataConvert.smali     |  2 +-
- .../ocs/camera/consumer/apsAdapter/ALog.smali    |  6 +++---
  .../ocs/camera/producer/mode/BaseMode.smali      | 16 ----------------
  smali/com/oplus/statistics/util/LogUtil.smali    |  2 +-
- 9 files changed, 12 insertions(+), 28 deletions(-)
+ 7 files changed, 6 insertions(+), 22 deletions(-)
 
 diff --git a/smali/com/google/oplus/protobuf/ExtensionRegistryLite.smali b/smali/com/google/oplus/protobuf/ExtensionRegistryLite.smali
-index 4baa859..17c1396 100644
+index 24f6995..0538168 100644
 --- a/smali/com/google/oplus/protobuf/ExtensionRegistryLite.smali
 +++ b/smali/com/google/oplus/protobuf/ExtensionRegistryLite.smali
 @@ -19,7 +19,7 @@
@@ -29,45 +32,20 @@ index 4baa859..17c1396 100644
  .field private static volatile emptyRegistry:Lcom/google/oplus/protobuf/ExtensionRegistryLite;
  
 diff --git a/smali/com/oplus/camera/hdrtransform/HdrTransformPlatform.smali b/smali/com/oplus/camera/hdrtransform/HdrTransformPlatform.smali
-index 99deba9..01e5ef3 100644
+index 57f5c8a..7743423 100644
 --- a/smali/com/oplus/camera/hdrtransform/HdrTransformPlatform.smali
 +++ b/smali/com/oplus/camera/hdrtransform/HdrTransformPlatform.smali
-@@ -8,9 +8,9 @@
- 
+@@ -6,7 +6,7 @@
+ # static fields
  .field private static final TAG:Ljava/lang/String; = "HdrTransformPlatform"
- 
--.field private static sAlgoExists:Z = false
-+.field private static sAlgoExists:Z
  
 -.field private static sLibraryLoaded:Z = false
 +.field private static sLibraryLoaded:Z
  
  
  # direct methods
-diff --git a/smali/com/oplus/ocs/camera/UxThreadPool.smali b/smali/com/oplus/ocs/camera/UxThreadPool.smali
-index c86e6bf..2f5fc6d 100644
---- a/smali/com/oplus/ocs/camera/UxThreadPool.smali
-+++ b/smali/com/oplus/ocs/camera/UxThreadPool.smali
-@@ -31,7 +31,7 @@
- 
- .field private static final UX_THREAD_LOCK:Ljava/lang/Object;
- 
--.field private static sThreadUxMap:Landroid/util/SparseArray; = null
-+.field private static sThreadUxMap:Landroid/util/SparseArray;
-     .annotation system Ldalvik/annotation/Signature;
-         value = {
-             "Landroid/util/SparseArray<",
-@@ -52,7 +52,7 @@
-     .end annotation
- .end field
- 
--.field private static sbHasSetUx:Z = false
-+.field private static sbHasSetUx:Z
- 
- 
- # instance fields
 diff --git a/smali/com/oplus/ocs/camera/common/parameter/apsadapter/ApsHelper.smali b/smali/com/oplus/ocs/camera/common/parameter/apsadapter/ApsHelper.smali
-index 2c12a69..81757ae 100644
+index 9149d5d..62224dc 100644
 --- a/smali/com/oplus/ocs/camera/common/parameter/apsadapter/ApsHelper.smali
 +++ b/smali/com/oplus/ocs/camera/common/parameter/apsadapter/ApsHelper.smali
 @@ -10,7 +10,7 @@
@@ -80,23 +58,23 @@ index 2c12a69..81757ae 100644
  .field private static mClazzField:Ljava/lang/reflect/Field;
  
 diff --git a/smali/com/oplus/ocs/camera/common/util/OsenseKeyThreadHelper.smali b/smali/com/oplus/ocs/camera/common/util/OsenseKeyThreadHelper.smali
-index d4ab463..81d3332 100644
+index 25abd8a..78724b5 100644
 --- a/smali/com/oplus/ocs/camera/common/util/OsenseKeyThreadHelper.smali
 +++ b/smali/com/oplus/ocs/camera/common/util/OsenseKeyThreadHelper.smali
-@@ -12,7 +12,7 @@
+@@ -16,7 +16,7 @@
  
  .field private static final sOsenseEventLock:Ljava/lang/Object;
  
 -.field private static sOsenseInit:Z = false
 +.field private static sOsenseInit:Z
  
- .field private static sOsenseResClient:Lcom/oplus/osense/OsenseResClient;
+ .field private static sOsenseResClient:Lcom/oplus/osense/OsenseResClient; = null
  
 diff --git a/smali/com/oplus/ocs/camera/consumer/ApsDataConvert.smali b/smali/com/oplus/ocs/camera/consumer/ApsDataConvert.smali
-index 31b9dbb..9b4dc39 100644
+index bc3373d..0bfe7b0 100644
 --- a/smali/com/oplus/ocs/camera/consumer/ApsDataConvert.smali
 +++ b/smali/com/oplus/ocs/camera/consumer/ApsDataConvert.smali
-@@ -84,7 +84,7 @@
+@@ -78,7 +78,7 @@
  
  .field private static final TAG:Ljava/lang/String; = "ApsDataConvert"
  
@@ -105,30 +83,11 @@ index 31b9dbb..9b4dc39 100644
  
  
  # direct methods
-diff --git a/smali/com/oplus/ocs/camera/consumer/apsAdapter/ALog.smali b/smali/com/oplus/ocs/camera/consumer/apsAdapter/ALog.smali
-index 8045fc6..aa3c7f2 100644
---- a/smali/com/oplus/ocs/camera/consumer/apsAdapter/ALog.smali
-+++ b/smali/com/oplus/ocs/camera/consumer/apsAdapter/ALog.smali
-@@ -6,11 +6,11 @@
- # static fields
- .field private static final TAG:Ljava/lang/String; = "ALog"
- 
--.field private static volatile sEnable:Z = false
-+.field private static volatile sEnable:Z
- 
--.field private static volatile sJNILoadFailed:Z = false
-+.field private static volatile sJNILoadFailed:Z
- 
--.field private static volatile sLogEncryptEnable:Z = false
-+.field private static volatile sLogEncryptEnable:Z
- 
- 
- # direct methods
 diff --git a/smali/com/oplus/ocs/camera/producer/mode/BaseMode.smali b/smali/com/oplus/ocs/camera/producer/mode/BaseMode.smali
-index efc5891..5bdf1cd 100644
+index 4f2f327..5eecc34 100644
 --- a/smali/com/oplus/ocs/camera/producer/mode/BaseMode.smali
 +++ b/smali/com/oplus/ocs/camera/producer/mode/BaseMode.smali
-@@ -15589,24 +15589,8 @@
+@@ -14634,24 +14634,8 @@
  .method public isSensorModeNeedWait(II)Z
      .locals 0
  
@@ -154,7 +113,7 @@ index efc5891..5bdf1cd 100644
  .end method
  
 diff --git a/smali/com/oplus/statistics/util/LogUtil.smali b/smali/com/oplus/statistics/util/LogUtil.smali
-index ed3d2f2..4f675aa 100644
+index ead5bf3..d795cf1 100644
 --- a/smali/com/oplus/statistics/util/LogUtil.smali
 +++ b/smali/com/oplus/statistics/util/LogUtil.smali
 @@ -6,7 +6,7 @@
@@ -166,6 +125,3 @@ index ed3d2f2..4f675aa 100644
  
  
  # direct methods
--- 
-2.54.0
-
