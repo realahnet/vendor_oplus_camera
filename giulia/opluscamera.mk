@@ -42,7 +42,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Camera
 $(call soong_config_set,camera,target_ships_oplus_cam,true)
 $(call soong_config_set,cameraservice,allow_nonincreasing_timestamps,true)
-$(call soong_config_set,libgui,num_buffer_slots,96)
 
 # OPlus FWK
 $(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
