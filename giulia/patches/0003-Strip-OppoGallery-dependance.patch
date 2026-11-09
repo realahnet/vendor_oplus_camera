@@ -1,191 +1,195 @@
-From 6fcffb3d4711885375dee3b030aefbf63ea3227a Mon Sep 17 00:00:00 2001
+From b3e8b56445381db85cf2ec1b47b9183aca685a45 Mon Sep 17 00:00:00 2001
 From: realahnet <syedmusicrealise@gmail.com>
-Date: Sun, 8 Nov 2026 14:36:07 +0500
-Subject: [PATCH] Strip OppoGallery dependence - use standard ACTION_VIEW intent
+Date: Sun, 28 Jun 2026 23:28:23 +0500
+Subject: [PATCH] Strip OppoGallery dependence - use standard ACTION_VIEW
+ intent
+
 ---
+ .../oplus/camera/helper/GalleryHelper.smali   | 152 +++---------------
+ 1 file changed, 21 insertions(+), 131 deletions(-)
+
+diff --git a/smali_classes12/com/oplus/camera/helper/GalleryHelper.smali b/smali_classes12/com/oplus/camera/helper/GalleryHelper.smali
+index 40c05e4e..0a8e6c01 100644
 --- a/smali_classes12/com/oplus/camera/helper/GalleryHelper.smali
 +++ b/smali_classes12/com/oplus/camera/helper/GalleryHelper.smali
-@@ -2047,141 +2047,39 @@
- .end method
+@@ -2920,8 +2920,8 @@
  
- .method public final k(Landroid/content/Intent;ZLandroid/net/Uri;)V
--    .locals 1
-+    .locals 2
+     .line 38
+     .line 39
+-    if-nez v3, :cond_0
+-
++    goto :cond_0
++ 
+     .line 40
+     .line 41
+     return v12
+@@ -6043,147 +6043,37 @@
+ .method public final q(Landroid/content/Intent;ZLandroid/net/Uri;)V
+     .locals 2
  
 -    .line 1
--    new-instance v0, Le9/s;
-+    # Build a clean ACTION_VIEW intent (standard Android gallery launch)
-+    new-instance v0, Landroid/content/Intent;
-+
-+    const-string v1, "android.intent.action.VIEW"
-+
-+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-+
-+    # Set MIME type based on whether it's a video (p2) or image
-+    if-eqz p2, :cond_image
-+
-+    const-string v1, "video/*"
-+
-+    goto :goto_setdata
-+
-+    :cond_image
-+    const-string v1, "image/*"
-+
-+    :goto_setdata
-+    # Set the content URI and MIME type
-+    invoke-virtual {v0, p3, v1}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-+
-+    # Add FLAG_GRANT_READ_URI_PERMISSION so the gallery can read the file
-+    const/4 v1, 0x1
-+
-+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-+
-+    # Get the activity and launch
-+    iget-object v1, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
-+
-+    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
- 
+-    new-instance v0, Ll6/kd;
+-
 -    .line 2
 -    .line 3
--    invoke-direct {v0, p2, p3}, Le9/s;-><init>(ZLandroid/net/Uri;)V
+-    const/4 v1, 0x3
 -
 -    .line 4
+-    invoke-direct {v0, p2, p3, v1}, Ll6/kd;-><init>(ZLjava/lang/Object;I)V
+-
 -    .line 5
 -    .line 6
+-    .line 7
 -    const-string p2, "thumbnail_click"
 -
--    .line 7
 -    .line 8
+-    .line 9
 -    invoke-static {p2, v0}, Lcom/oplus/camera/statistics/ReportThread;->postEvent(Ljava/lang/String;Ljava/lang/Runnable;)V
 -
--    .line 9
 -    .line 10
 -    .line 11
+-    .line 12
 -    new-instance p2, Ljava/lang/ref/WeakReference;
 -
--    .line 12
 -    .line 13
+-    .line 14
 -    invoke-direct {p2, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 -
--    .line 14
 -    .line 15
 -    .line 16
--    sput-object p2, Lcom/oplus/camera/helper/GalleryHelper;->A:Ljava/lang/ref/WeakReference;
--
 -    .line 17
+-    sput-object p2, Lcom/oplus/camera/helper/GalleryHelper;->D:Ljava/lang/ref/WeakReference;
+-
 -    .line 18
+-    .line 19
 -    iget-object p2, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
 -
--    .line 19
 -    .line 20
+-    .line 21
 -    invoke-virtual {p2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 -
--    .line 21
 -    .line 22
 -    .line 23
--    move-result-object p2
--
 -    .line 24
--    invoke-virtual {p1, p2}, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
+-    move-result-object p2
 -
 -    .line 25
+-    invoke-virtual {p1, p2}, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
+-
 -    .line 26
 -    .line 27
--    move-result-object p2
--
 -    .line 28
--    if-eqz p2, :cond_0
+-    move-result-object p2
 -
 -    .line 29
+-    if-eqz p2, :cond_0
+-
 -    .line 30
+-    .line 31
 -    invoke-static {}, Landroid/app/ActivityOptions;->makeBasic()Landroid/app/ActivityOptions;
 -
--    .line 31
 -    .line 32
 -    .line 33
--    move-result-object p2
--
 -    .line 34
--    iget-object p3, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
+-    move-result-object p2
 -
 -    .line 35
--    .line 36
--    invoke-virtual {p3}, Landroid/content/Context;->getDisplay()Landroid/view/Display;
+-    iget-object v0, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
 -
+-    .line 36
 -    .line 37
+-    invoke-virtual {v0}, Landroid/content/Context;->getDisplay()Landroid/view/Display;
+-
 -    .line 38
 -    .line 39
--    move-result-object p3
--
 -    .line 40
--    invoke-virtual {p3}, Landroid/view/Display;->getDisplayId()I
+-    move-result-object v0
 -
 -    .line 41
+-    invoke-virtual {v0}, Landroid/view/Display;->getDisplayId()I
+-
 -    .line 42
 -    .line 43
--    move-result p3
--
 -    .line 44
--    invoke-virtual {p2, p3}, Landroid/app/ActivityOptions;->setLaunchDisplayId(I)Landroid/app/ActivityOptions;
--
+-    move-result v0
++    # Build a clean ACTION_VIEW intent (standard Android gallery launch)
++    new-instance v0, Landroid/content/Intent;
+ 
 -    .line 45
+-    invoke-virtual {p2, v0}, Landroid/app/ActivityOptions;->setLaunchDisplayId(I)Landroid/app/ActivityOptions;
++    const-string v1, "android.intent.action.VIEW"
+ 
 -    .line 46
 -    .line 47
--    iget-object p0, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
--
 -    .line 48
+-    invoke-static {p1, p3}, Lcom/oplus/camera/helper/GalleryHelper;->a(Landroid/content/Intent;Landroid/net/Uri;)V
++    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+ 
 -    .line 49
--    invoke-virtual {p2}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
--
 -    .line 50
 -    .line 51
+-    iget-object p0, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
+-
 -    .line 52
--    move-result-object p2
--
 -    .line 53
--    invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
--
+-    invoke-virtual {p2}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
++    # Set MIME type based on whether it's a video (p2) or image
++    if-eqz p2, :cond_image
+ 
 -    .line 54
 -    .line 55
 -    .line 56
--    goto :goto_0
--
+-    move-result-object p2
++    const-string v1, "video/*"
+ 
 -    .line 57
--    :cond_0
--    new-instance p0, Lcom/oplus/camera/feature/out/screen/capture/w;
--
+-    invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
++    goto :goto_setdata
+ 
 -    .line 58
 -    .line 59
--    const/16 p1, 0x11
--
 -    .line 60
+-    goto :goto_0
++    :cond_image
++    const-string v1, "image/*"
+ 
 -    .line 61
--    invoke-direct {p0, p1}, Lcom/oplus/camera/feature/out/screen/capture/w;-><init>(I)V
--
+-    :cond_0
+-    new-instance p0, Luf/b;
++    :goto_setdata
++    # Set the content URI and MIME type
++    invoke-virtual {v0, p3, v1}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+ 
 -    .line 62
 -    .line 63
+-    const/16 p1, 0x11
++    # Add FLAG_GRANT_READ_URI_PERMISSION so the gallery can read the file
++    const/4 v1, 0x1
+ 
 -    .line 64
--    const-string p1, "GalleryHelper"
--
 -    .line 65
+-    invoke-direct {p0, p1}, Luf/b;-><init>(I)V
++    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+ 
 -    .line 66
--    invoke-static {p1, p0}, Lu6/a;->q(Ljava/lang/String;Ljava/util/function/Supplier;)V
--
 -    .line 67
 -    .line 68
+-    const-string p1, "GalleryHelper"
++    # Get the activity and launch
++    iget-object v1, p0, Lcom/oplus/camera/helper/GalleryHelper;->a:Landroid/app/Activity;
+ 
 -    .line 69
+-    .line 70
+-    invoke-static {p1, p0}, Lm8/c;->C(Ljava/lang/String;Ljava/util/function/Supplier;)V
++    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+ 
+-    .line 71
+-    .line 72
+-    .line 73
 -    :goto_0
      return-void
  .end method
  
---- a/smali/com/oplus/camera/CameraManager$f.smali
-+++ b/smali/com/oplus/camera/CameraManager$f.smali
-@@ -1660,6 +1660,8 @@
-     .line 219
-     if-nez v3, :cond_a
- 
-+    goto :cond_a
-+
-     .line 220
-     .line 221
-     invoke-static {}, Lyk/y0;->b()Lyk/y0;
+-- 
+2.56.0
+
